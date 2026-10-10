@@ -1,141 +1,194 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Alex Freelance | Services numériques</title>
-  <meta name="description" content="Alex Freelance : création d'images, vidéos, réponses aux emails et gestion des commentaires Facebook et Google.">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f4f7fc;
-      color: #202b3c;
-      line-height: 1.6;
-    }
-    header {
-      background: #102344;
-      color: white;
-      padding: 22px 15px;
-      text-align: center;
-    }
-    header h1 { margin: 0; font-size: 32px; }
-    nav { margin-top: 12px; }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 0 10px;
-    }
-    .hero {
-      padding: 65px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #102344, #1769aa);
-      color: white;
-    }
-    .hero h2 { font-size: 34px; margin-bottom: 12px; }
-    .hero p { max-width: 650px; margin: 0 auto 25px; }
-    .button {
-      display: inline-block;
-      background: #19b875;
-      color: white;
-      padding: 13px 23px;
-      margin: 7px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section { padding: 40px 18px; }
-    section h2 { text-align: center; margin-bottom: 25px; }
-    .services {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 18px;
-      max-width: 1050px;
-      margin: auto;
-    }
-    .card {
-      background: white;
-      padding: 23px;
-      border-radius: 12px;
-      box-shadow: 0 3px 12px #0000000c;
-    }
-    .card h3 { color: #1769aa; }
-    .about, .contact {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-    }
-    footer {
-      background: #102344;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Alex Freelance : création de contenus visuels, vidéos et assistance aux entreprises sur les réseaux sociaux.">
+<title>Alex Freelance | Digital Services</title>
+<style>
+:root {
+  --navy: #0b1220;
+  --gold: #d6b36a;
+  --white: #ffffff;
+  --muted: #aab4c5;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f7f8fb;
+  color: #172033;
+  line-height: 1.7;
+}
+header {
+  background: var(--navy);
+  color: white;
+  padding: 20px 7%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+.logo { font-size: 23px; font-weight: bold; }
+.logo span, .gold { color: var(--gold); }
+nav { display: flex; flex-wrap: wrap; gap: 18px; }
+nav a { color: white; text-decoration: none; font-size: 14px; }
+nav a:hover { color: var(--gold); }
+.hero {
+  background: radial-gradient(ellipse at top right, #263650, #0b1220 65%);
+  color: white;
+  padding: 100px 7% 110px;
+}
+.hero-content { max-width: 850px; margin: auto; }
+.eyebrow {
+  color: var(--gold);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: bold;
+}
+h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1.12; margin: 20px 0; }
+.hero p { color: #d2d9e5; font-size: 18px; max-width: 650px; }
+.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+.btn {
+  display: inline-block;
+  padding: 13px 22px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+}
+.btn-gold { background: var(--gold); color: #111827; }
+.btn-outline { border: 1px solid #aab4c5; color: white; }
+section { padding: 75px 7%; }
+.container { max-width: 1100px; margin: auto; }
+.section-title { font-size: 34px; margin: 0 0 12px; }
+.section-intro { color: #647084; max-width: 680px; margin-bottom: 35px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
+.card {
+  background: white;
+  padding: 28px;
+  border: 1px solid #e5e9f0;
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(15,23,42,.04);
+}
+.card .number { color: #b38b3f; font-weight: bold; font-size: 13px; }
+.card h3 { margin-bottom: 8px; }
+.card p { color: #647084; font-size: 15px; }
+.dark-section { background: var(--navy); color: white; }
+.dark-section .section-intro { color: var(--muted); }
+.portfolio-card {
+  background: #17243a;
+  border: 1px solid #334158;
+  padding: 25px;
+  border-radius: 10px;
+}
+.portfolio-card p { color: #c1cad8; }
+.contact-box {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  border: 1px solid #e5e9f0;
+}
+.contact-box a { overflow-wrap: anywhere; }
+footer {
+  background: #070c16;
+  color: #aab4c5;
+  text-align: center;
+  padding: 25px 7%;
+  font-size: 13px;
+}
+.lang { cursor: pointer; border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 7px 10px; border-radius: 4px; }
+@media(max-width:600px) {
+  header { padding: 18px 5%; }
+  .hero { padding: 70px 6%; }
+  section { padding: 55px 6%; }
+  nav { gap: 12px; }
+}
+</style>
 </head>
 <body>
 
 <header>
-  <h1>Alex Freelance</h1>
+  <div class="logo">ALEX<span>.</span></div>
   <nav>
-    <a href="#accueil">Accueil</a>
-    <a href="#services">Services</a>
-    <a href="#apropos">À propos</a>
-    <a href="#contact">Contact</a>
+    <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
+    <a href="#services" data-fr="Services" data-en="Services">Services</a>
+    <a href="#portfolio" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
+    <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
   </nav>
+  <button class="lang" onclick="toggleLanguage()">FR / EN</button>
 </header>
 
-<div class="hero" id="accueil">
-  <h2>Bienvenue chez Alex Freelance</h2>
-  <p>Des services numériques professionnels pour vous aider à développer votre activité et améliorer votre présence en ligne.</p>
-  <a class="button" href="#services">Découvrir mes services</a>
-  <a class="button" href="https://wa.me/261328160506">Me contacter sur WhatsApp</a>
-</div>
-
-<section id="services">
-  <h2>Mes services professionnels</h2>
-  <div class="services">
-    <div class="card">
-      <h3>📧 Réponse aux emails</h3>
-      <p>Gestion et rédaction de réponses professionnelles à vos emails clients.</p>
-    </div>
-    <div class="card">
-      <h3>💬 Commentaires Facebook et Google</h3>
-      <p>Réponses courtoises et professionnelles aux commentaires et avis de vos clients.</p>
-    </div>
-    <div class="card">
-      <h3>🎬 Création de vidéos</h3>
-      <p>Création de contenus vidéo pour présenter vos produits et votre activité.</p>
-    </div>
-    <div class="card">
-      <h3>🖼️ Création d'images</h3>
-      <p>Création de visuels publicitaires pour les réseaux sociaux et votre entreprise.</p>
+<main>
+<section class="hero" id="accueil">
+  <div class="hero-content">
+    <div class="eyebrow" data-fr="Votre partenaire digital" data-en="Your digital partner">Votre partenaire digital</div>
+    <h1 data-fr="Donnez une image professionnelle à votre entreprise." data-en="Give your business a professional digital presence.">Donnez une image professionnelle à votre entreprise.</h1>
+    <p data-fr="Je vous accompagne dans la création de contenus visuels et vidéo, ainsi que dans la gestion de votre présence sur les réseaux sociaux." data-en="I help businesses create visual and video content and manage their social media presence.">Je vous accompagne dans la création de contenus visuels et vidéo, ainsi que dans la gestion de votre présence sur les réseaux sociaux.</p>
+    <div class="actions">
+      <a class="btn btn-gold" href="#contact" data-fr="Parlons de votre projet →" data-en="Let's discuss your project →">Parlons de votre projet →</a>
+      <a class="btn btn-outline" href="#services" data-fr="Découvrir mes services" data-en="Explore my services">Découvrir mes services</a>
     </div>
   </div>
 </section>
 
-<section id="apropos">
-  <h2>À propos de moi</h2>
-  <div class="about">
-    <p>Je suis Alex, freelance spécialisé dans les services numériques. Mon objectif est de vous aider à communiquer efficacement avec vos clients grâce à des contenus de qualité et un service sérieux.</p>
-    <p><strong>Services disponibles en français et en anglais.</strong></p>
+<section id="services">
+  <div class="container">
+    <div class="eyebrow" data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</div>
+    <h2 class="section-title" data-fr="Des services pensés pour votre croissance" data-en="Services designed for your growth">Des services pensés pour votre croissance</h2>
+    <p class="section-intro" data-fr="Des solutions numériques pour améliorer votre communication et votre image de marque." data-en="Digital solutions to strengthen your communication and brand image.">Des solutions numériques pour améliorer votre communication et votre image de marque.</p>
+    <div class="cards">
+      <article class="card"><div class="number">01 / VISUEL</div><h3 data-fr="Création d'images" data-en="Image Creation">Création d'images</h3><p data-fr="Visuels attractifs pour vos publications, vos campagnes et votre communication commerciale." data-en="Engaging visuals for your posts, campaigns and business communication.">Visuels attractifs pour vos publications, vos campagnes et votre communication commerciale.</p></article>
+      <article class="card"><div class="number">02 / VIDÉO</div><h3 data-fr="Création vidéo" data-en="Video Creation">Création vidéo</h3><p data-fr="Contenus vidéo créatifs pour présenter vos produits, vos services et votre activité." data-en="Creative videos to showcase your products, services and business.">Contenus vidéo créatifs pour présenter vos produits, vos services et votre activité.</p></article>
+      <article class="card"><div class="number">03 / COMMUNAUTÉ</div><h3 data-fr="Gestion des commentaires" data-en="Comment Management">Gestion des commentaires</h3><p data-fr="Assistance pour répondre aux commentaires et messages de vos clients sur Facebook et Google." data-en="Support with customer comments and messages on Facebook and Google.">Assistance pour répondre aux commentaires et messages de vos clients sur Facebook et Google.</p></article>
+      <article class="card"><div class="number">04 / DIGITAL</div><h3 data-fr="Assistance numérique" data-en="Digital Support">Assistance numérique</h3><p data-fr="Un soutien flexible pour vos tâches numériques et votre communication en ligne." data-en="Flexible support for your digital tasks and online communication.">Un soutien flexible pour vos tâches numériques et votre communication en ligne.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="dark-section" id="portfolio">
+  <div class="container">
+    <div class="eyebrow" data-fr="Mon univers créatif" data-en="My creative work">Mon univers créatif</div>
+    <h2 class="section-title" data-fr="Un contenu qui valorise votre marque" data-en="Content that elevates your brand">Un contenu qui valorise votre marque</h2>
+    <p class="section-intro" data-fr="Chaque projet est une occasion de communiquer clairement et de présenter votre activité avec soin." data-en="Every project is an opportunity to communicate clearly and present your business with care.">Chaque projet est une occasion de communiquer clairement et de présenter votre activité avec soin.</p>
+    <div class="cards">
+      <article class="portfolio-card"><div class="gold">✦ IMAGE & DESIGN</div><h3 data-fr="Visuels de marque" data-en="Brand Visuals">Visuels de marque</h3><p data-fr="Des créations adaptées à votre identité et à votre audience." data-en="Creative work tailored to your identity and audience.">Des créations adaptées à votre identité et à votre audience.</p></article>
+      <article class="portfolio-card"><div class="gold">✦ VIDÉO</div><h3 data-fr="Contenus dynamiques" data-en="Dynamic Content">Contenus dynamiques</h3><p data-fr="Des formats visuels conçus pour capter l'attention." data-en="Visual formats designed to capture attention.">Des formats visuels conçus pour capter l'attention.</p></article>
+      <article class="portfolio-card"><div class="gold">✦ COMMUNICATION</div><h3 data-fr="Relation client" data-en="Customer Relations">Relation client</h3><p data-fr="Une communication claire, professionnelle et attentive." data-en="Clear, professional and attentive communication.">Une communication claire, professionnelle et attentive.</p></article>
+    </div>
   </div>
 </section>
 
 <section id="contact">
-  <h2>Contactez-moi</h2>
-  <div class="contact">
-    <p>Vous recherchez un freelance pour votre entreprise ? Contactez-moi pour discuter de vos besoins.</p>
-    <p><strong>Email :</strong> parfaitalex40@gmail.com</p>
-    <a class="button" href="https://wa.me/261328160506">Écrire sur WhatsApp</a>
-    <a class="button" href="mailto:parfaitalex40@gmail.com">Envoyer un email</a>
+  <div class="container">
+    <div class="eyebrow" data-fr="Entrons en contact" data-en="Get in touch">Entrons en contact</div>
+    <h2 class="section-title" data-fr="Parlons de votre prochain projet" data-en="Let's talk about your next project">Parlons de votre prochain projet</h2>
+    <p class="section-intro" data-fr="Vous recherchez un partenaire freelance pour votre entreprise ? Contactez-moi pour discuter de vos besoins." data-en="Looking for a freelance partner for your business? Contact me to discuss your needs.">Vous recherchez un partenaire freelance pour votre entreprise ? Contactez-moi pour discuter de vos besoins.</p>
+    <div class="contact-box">
+      <p><strong>Email :</strong> <a href="mailto:parfaitalex40@gmail.com">parfaitalex40@gmail.com</a></p>
+      <p><strong>WhatsApp :</strong> <a href="https://wa.me/261328160506" target="_blank" rel="noopener">Me contacter sur WhatsApp</a></p>
+      <a class="btn btn-gold" href="https://wa.me/261328160506" target="_blank" rel="noopener" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</a>
+    </div>
   </div>
 </section>
+</main>
 
-<footer>
-  <p>© 2026 Alex Freelance — Tous droits réservés.</p>
-</footer>
+<footer>© <span id="year"></span> Alex Freelance. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></footer>
 
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+let english = false;
+function toggleLanguage() {
+  english = !english;
+  document.documentElement.lang = english ? "en" : "fr";
+  document.querySelectorAll("[data-fr][data-en]").forEach(function(el) {
+    el.textContent = english ? el.dataset.en : el.dataset.fr;
+  });
+}
+</script>
 </body>
-</html>
+  </html>
+      
