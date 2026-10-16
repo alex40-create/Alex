@@ -4,190 +4,983 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Alex Freelance : création de contenus visuels, vidéos et assistance aux entreprises sur les réseaux sociaux.">
-<title>Alex Freelance | Digital Services</title>
+<meta name="description" content="Parfait Alex : assistance virtuelle, gestion des messages clients et création de contenus digitaux pour entrepreneurs et petites entreprises.">
+<meta name="theme-color" content="#101b3d">
+<title>Parfait Alex | Assistance virtuelle</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
 <style>
 :root {
-  --navy: #0b1220;
-  --gold: #d6b36a;
+  --navy: #101b3d;
+  --blue: #315cf5;
+  --sky: #eaf0ff;
+  --gold: #f4c96b;
+  --ink: #17213b;
+  --muted: #68728a;
   --white: #ffffff;
-  --muted: #aab4c5;
+  --line: #e7eaf2;
+  --bg: #f8faff;
 }
+
 * { box-sizing: border-box; }
+
 html { scroll-behavior: smooth; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f7f8fb;
-  color: #172033;
-  line-height: 1.7;
+  font-family: "DM Sans", sans-serif;
+  color: var(--ink);
+  background: var(--white);
+  line-height: 1.65;
 }
-header {
+
+a { text-decoration: none; color: inherit; }
+
+.container {
+  width: min(1140px, 92%);
+  margin: auto;
+}
+
+/* BARRE DE CONTACT EN HAUT */
+
+.topbar {
   background: var(--navy);
   color: white;
-  padding: 20px 7%;
+  font-size: .88rem;
+}
+
+.topbar-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 15px;
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.top-links {
+  display: flex;
+  gap: 10px;
+  align-items: center;
   flex-wrap: wrap;
 }
-.logo { font-size: 23px; font-weight: bold; }
-.logo span, .gold { color: var(--gold); }
-nav { display: flex; flex-wrap: wrap; gap: 18px; }
-nav a { color: white; text-decoration: none; font-size: 14px; }
-nav a:hover { color: var(--gold); }
-.hero {
-  background: radial-gradient(ellipse at top right, #263650, #0b1220 65%);
+
+.top-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  padding: 9px 15px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .85rem;
+  transition: .2s;
+}
+
+.whatsapp {
+  background: #20c777;
+  color: #062f20;
+}
+
+.email {
+  background: white;
+  color: var(--navy);
+}
+
+.top-btn:hover, .btn:hover {
+  transform: translateY(-2px);
+}
+
+/* NAVIGATION */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(255,255,255,.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  min-height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-family: Manrope, sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 14px;
   color: white;
-  padding: 100px 7% 110px;
+  background: linear-gradient(135deg, var(--blue), #7590ff);
+  box-shadow: 0 8px 20px #315cf52c;
 }
-.hero-content { max-width: 850px; margin: auto; }
-.eyebrow {
-  color: var(--gold);
-  letter-spacing: 3px;
+
+.brand small {
+  display: block;
+  font-family: "DM Sans", sans-serif;
+  font-size: .7rem;
+  letter-spacing: 1.5px;
   text-transform: uppercase;
-  font-size: 12px;
-  font-weight: bold;
+  color: var(--muted);
 }
-h1 { font-size: clamp(38px, 7vw, 66px); line-height: 1.12; margin: 20px 0; }
-.hero p { color: #d2d9e5; font-size: 18px; max-width: 650px; }
-.actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 30px; }
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-weight: 600;
+  font-size: .93rem;
+}
+
+.nav-links a:hover { color: var(--blue); }
+
+.nav-cta {
+  background: var(--blue);
+  color: white !important;
+  padding: 11px 16px;
+  border-radius: 12px;
+}
+
+/* ACCUEIL */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 88% 15%, #dce5ff 0, transparent 27%),
+    linear-gradient(135deg, #f8faff 0%, #fff 60%);
+  padding: 85px 0;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  align-items: center;
+  gap: 50px;
+}
+
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 12px;
+  background: var(--sky);
+  color: #294ed1;
+  border: 1px solid #dbe4ff;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: .82rem;
+}
+
+.eyebrow span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #2cc98a;
+}
+
+.hero h1 {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(2.4rem, 5vw, 4.2rem);
+  line-height: 1.1;
+  letter-spacing: -2px;
+  margin: 22px 0;
+  color: var(--navy);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--blue);
+}
+
+.hero p {
+  font-size: 1.08rem;
+  color: var(--muted);
+  max-width: 600px;
+  margin-bottom: 28px;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .btn {
-  display: inline-block;
-  padding: 13px 22px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 14px 20px;
+  border-radius: 13px;
+  font-weight: 800;
+  transition: .2s;
+  border: 1px solid transparent;
+  cursor: pointer;
 }
-.btn-gold { background: var(--gold); color: #111827; }
-.btn-outline { border: 1px solid #aab4c5; color: white; }
-section { padding: 75px 7%; }
-.container { max-width: 1100px; margin: auto; }
-.section-title { font-size: 34px; margin: 0 0 12px; }
-.section-intro { color: #647084; max-width: 680px; margin-bottom: 35px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap: 20px; }
-.card {
+
+.btn-primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 12px 24px #315cf52b;
+}
+
+.btn-secondary {
+  background: white;
+  border-color: var(--line);
+  color: var(--navy);
+}
+
+.trust-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 28px;
+  color: #59647c;
+  font-size: .9rem;
+  font-weight: 600;
+}
+
+.check {
+  color: #16a66a;
+  font-weight: 900;
+}
+
+/* CARTE DE PRESENTATION */
+
+.hero-card {
+  background: white;
+  border: 1px solid #e8ecf8;
+  border-radius: 26px;
+  padding: 26px;
+  box-shadow: 0 25px 70px #1d2b5b12;
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.card-label {
+  font-size: .78rem;
+  color: var(--muted);
+  font-weight: 700;
+}
+
+.status {
+  font-size: .75rem;
+  font-weight: 800;
+  color: #168454;
+  background: #e4f9ef;
+  padding: 6px 10px;
+  border-radius: 999px;
+}
+
+.hero-card h3 {
+  font: 800 1.4rem Manrope, sans-serif;
+  margin: 0 0 8px;
+  color: var(--navy);
+}
+
+.hero-card > p {
+  font-size: .94rem;
+  color: var(--muted);
+}
+
+.service-mini {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+}
+
+.mini-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 13px;
+  display: grid;
+  place-items: center;
+  background: var(--sky);
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+
+.service-mini strong { display: block; }
+.service-mini small { color: var(--muted); }
+
+.card-foot {
+  margin-top: 15px;
+  background: var(--navy);
+  color: white;
+  border-radius: 16px;
+  padding: 15px 17px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-foot small {
+  color: #c5cee6;
+  display: block;
+}
+
+.card-foot b {
+  color: var(--gold);
+  font-size: 1.5rem;
+}
+
+/* SECTIONS */
+
+section { padding: 80px 0; }
+
+.section-head {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 42px;
+}
+
+.section-kicker {
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--blue);
+  font-weight: 800;
+}
+
+.section-head h2,
+.about-copy h2 {
+  font: 800 clamp(1.8rem, 3vw, 2.7rem)/1.2 Manrope, sans-serif;
+  letter-spacing: -1px;
+  color: var(--navy);
+  margin: 10px 0 13px;
+}
+
+.section-head p { color: var(--muted); }
+
+.services { background: var(--bg); }
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.service-card {
   background: white;
   padding: 28px;
-  border: 1px solid #e5e9f0;
-  border-radius: 10px;
-  box-shadow: 0 8px 25px rgba(15,23,42,.04);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  transition: .25s;
 }
-.card .number { color: #b38b3f; font-weight: bold; font-size: 13px; }
-.card h3 { margin-bottom: 8px; }
-.card p { color: #647084; font-size: 15px; }
-.dark-section { background: var(--navy); color: white; }
-.dark-section .section-intro { color: var(--muted); }
-.portfolio-card {
-  background: #17243a;
-  border: 1px solid #334158;
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 18px 38px #1d2b5b0e;
+  border-color: #cbd6ff;
+}
+
+.service-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  background: var(--sky);
+  border-radius: 16px;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font: 800 1.15rem Manrope, sans-serif;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.service-card p {
+  color: var(--muted);
+  font-size: .94rem;
+}
+
+.service-card ul {
+  padding: 0;
+  list-style: none;
+}
+
+.service-card li {
+  margin: 8px 0;
+  font-size: .9rem;
+  color: #47516a;
+}
+
+.service-card li::before {
+  content: "✓";
+  color: #19a56b;
+  font-weight: 900;
+  margin-right: 9px;
+}
+
+/* A PROPOS */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 55px;
+  align-items: center;
+}
+
+.about-visual {
+  background: linear-gradient(145deg, #e8eeff, #f9faff);
+  border-radius: 26px;
+  padding: 28px;
+  min-height: 320px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-panel {
+  background: white;
+  border: 1px solid #e3e8fa;
+  border-radius: 20px;
   padding: 25px;
-  border-radius: 10px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 18px 45px #1d2b5b0e;
 }
-.portfolio-card p { color: #c1cad8; }
+
+.big-check { font-size: 2.2rem; }
+
+.about-panel h3 {
+  font: 800 1.35rem Manrope, sans-serif;
+  color: var(--navy);
+}
+
+.about-panel p,
+.about-copy p { color: var(--muted); }
+
+.about-stat {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.about-stat div {
+  background: var(--bg);
+  padding: 12px;
+  border-radius: 12px;
+  font-size: .82rem;
+  font-weight: 700;
+}
+
+.value-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 22px 0;
+}
+
+.value-list div {
+  display: flex;
+  gap: 9px;
+  font-weight: 700;
+  font-size: .92rem;
+}
+
+/* CONTACT */
+
+.contact {
+  background: var(--navy);
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-wrap {
+  display: grid;
+  grid-template-columns: 1fr .8fr;
+  gap: 45px;
+  align-items: center;
+}
+
+.contact .section-kicker { color: var(--gold); }
+
+.contact h2 {
+  font: 800 clamp(2rem, 4vw, 3.1rem)/1.15 Manrope, sans-serif;
+  letter-spacing: -1.3px;
+  margin: 12px 0 18px;
+}
+
+.contact p {
+  color: #c8d0e5;
+  max-width: 560px;
+}
+
 .contact-box {
   background: white;
-  padding: 30px;
-  border-radius: 10px;
-  border: 1px solid #e5e9f0;
+  color: var(--navy);
+  padding: 24px;
+  border-radius: 20px;
 }
-.contact-box a { overflow-wrap: anywhere; }
-footer {
-  background: #070c16;
-  color: #aab4c5;
-  text-align: center;
-  padding: 25px 7%;
-  font-size: 13px;
+
+.contact-option {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+  padding: 13px 0;
+  border-bottom: 1px solid var(--line);
 }
-.lang { cursor: pointer; border: 1px solid var(--gold); color: var(--gold); background: transparent; padding: 7px 10px; border-radius: 4px; }
-@media(max-width:600px) {
-  header { padding: 18px 5%; }
-  .hero { padding: 70px 6%; }
-  section { padding: 55px 6%; }
-  nav { gap: 12px; }
+
+.contact-option:last-of-type { border-bottom: 0; }
+
+.contact-option strong { display: block; }
+
+.contact-option small {
+  color: var(--muted);
+  overflow-wrap: anywhere;
+}
+
+.contact-box .btn {
+  width: 100%;
+  margin-top: 12px;
+}
+
+/* PIED DE PAGE */
+
+.footer {
+  background: #0b132c;
+  color: #b8c1d8;
+  padding: 24px 0;
+  font-size: .86rem;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.footer strong { color: white; }
+
+.floating-wa {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  background: #20c777;
+  color: #073d28;
+  font-weight: 900;
+  border-radius: 999px;
+  padding: 13px 17px;
+  box-shadow: 0 10px 30px #07152b2c;
+}
+
+/* ADAPTATION TELEPHONE ET TABLETTE */
+
+@media (max-width: 850px) {
+  .hero-grid,
+  .about-grid,
+  .contact-wrap {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero { padding: 60px 0; }
+
+  .hero-card { max-width: 560px; }
+
+  .service-grid { grid-template-columns: 1fr 1fr; }
+
+  .nav-links { gap: 13px; }
+
+  .nav-links a:not(.nav-cta) { display: none; }
+}
+
+@media (max-width: 560px) {
+  .topbar-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .top-links { width: 100%; }
+
+  .top-btn { flex: 1; }
+
+  .nav { min-height: 68px; }
+
+  .brand { font-size: 1rem; }
+
+  .nav-cta {
+    padding: 10px 12px;
+    font-size: .83rem;
+  }
+
+  .hero h1 { letter-spacing: -1.4px; }
+
+  .hero-actions .btn { width: 100%; }
+
+  .service-grid { grid-template-columns: 1fr; }
+
+  section { padding: 62px 0; }
+
+  .service-card { padding: 23px; }
+
+  .value-list { grid-template-columns: 1fr; }
+
+  .hero-card { padding: 20px; }
+
+  .floating-wa {
+    right: 12px;
+    bottom: 12px;
+    padding: 11px 14px;
+  }
 }
 </style>
 </head>
+
 <body>
 
+<!-- CONTACTS VISIBLES DES L'OUVERTURE -->
+<div class="topbar">
+  <div class="container topbar-inner">
+    <div>✨ Un soutien fiable pour votre activité, à distance</div>
+
+    <div class="top-links">
+      <a class="top-btn whatsapp"
+         href="https://wa.me/261328160506"
+         target="_blank" rel="noopener noreferrer">
+        ☏ WhatsApp
+      </a>
+
+      <a class="top-btn email"
+         href="mailto:parfaitalex40@gmail.com">
+        ✉ Envoyer un e-mail
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- MENU PRINCIPAL -->
 <header>
-  <div class="logo">ALEX<span>.</span></div>
-  <nav>
-    <a href="#accueil" data-fr="Accueil" data-en="Home">Accueil</a>
-    <a href="#services" data-fr="Services" data-en="Services">Services</a>
-    <a href="#portfolio" data-fr="Portfolio" data-en="Portfolio">Portfolio</a>
-    <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
-  </nav>
-  <button class="lang" onclick="toggleLanguage()">FR / EN</button>
+  <div class="container nav">
+    <a class="brand" href="#accueil">
+      <span class="brand-mark">PA</span>
+      <span>
+        Parfait Alex
+        <small>Assistance digitale</small>
+      </span>
+    </a>
+
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="#accueil">Accueil</a>
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a class="nav-cta" href="#contact">Parlons de votre projet ↗</a>
+    </nav>
+  </div>
 </header>
 
 <main>
+
+<!-- ACCUEIL -->
 <section class="hero" id="accueil">
-  <div class="hero-content">
-    <div class="eyebrow" data-fr="Votre partenaire digital" data-en="Your digital partner">Votre partenaire digital</div>
-    <h1 data-fr="Donnez une image professionnelle à votre entreprise." data-en="Give your business a professional digital presence.">Donnez une image professionnelle à votre entreprise.</h1>
-    <p data-fr="Je vous accompagne dans la création de contenus visuels et vidéo, ainsi que dans la gestion de votre présence sur les réseaux sociaux." data-en="I help businesses create visual and video content and manage their social media presence.">Je vous accompagne dans la création de contenus visuels et vidéo, ainsi que dans la gestion de votre présence sur les réseaux sociaux.</p>
-    <div class="actions">
-      <a class="btn btn-gold" href="#contact" data-fr="Parlons de votre projet →" data-en="Let's discuss your project →">Parlons de votre projet →</a>
-      <a class="btn btn-outline" href="#services" data-fr="Découvrir mes services" data-en="Explore my services">Découvrir mes services</a>
+  <div class="container hero-grid">
+
+    <div>
+      <div class="eyebrow">
+        <span></span>
+        Assistance virtuelle à distance
+      </div>
+
+      <h1>
+        Vous gérez votre entreprise.
+        <em>Je vous aide à gagner du temps.</em>
+      </h1>
+
+      <p>
+        Parfait Alex accompagne les entrepreneurs et petites entreprises
+        dans la gestion des messages clients, les tâches administratives
+        simples et la création de contenus digitaux.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary"
+           href="https://wa.me/261328160506"
+           target="_blank" rel="noopener noreferrer">
+          Discuter sur WhatsApp ↗
+        </a>
+
+        <a class="btn btn-secondary" href="#services">
+          Découvrir les services ↓
+        </a>
+      </div>
+
+      <div class="trust-row">
+        <span><b class="check">✓</b> Travail à distance</span>
+        <span><b class="check">✓</b> Communication claire</span>
+        <span><b class="check">✓</b> Services flexibles</span>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-top">
+        <span class="card-label">VOTRE PARTENAIRE AU QUOTIDIEN</span>
+        <span class="status">● Disponible pour échanger</span>
+      </div>
+
+      <h3>Plus de temps pour l’essentiel.</h3>
+      <p>
+        Un appui pratique pour garder votre activité organisée
+        et vos clients bien accompagnés.
+      </p>
+
+      <div class="service-mini">
+        <div class="mini-icon">✉️</div>
+        <div>
+          <strong>Messages & e-mails</strong>
+          <small>Tri, suivi et réponses préparées</small>
+        </div>
+      </div>
+
+      <div class="service-mini">
+        <div class="mini-icon">💬</div>
+        <div>
+          <strong>Réseaux sociaux</strong>
+          <small>Messages privés et commentaires</small>
+        </div>
+      </div>
+
+      <div class="service-mini">
+        <div class="mini-icon">🎨</div>
+        <div>
+          <strong>Contenus digitaux</strong>
+          <small>Publications et visuels simples</small>
+        </div>
+      </div>
+
+      <div class="card-foot">
+        <div>
+          <small>PARFAIT ALEX</small>
+          <strong>Votre activité, mieux organisée</strong>
+        </div>
+        <b>✦</b>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+
+    <div class="section-head">
+      <div class="section-kicker">Ce que je peux faire pour vous</div>
+      <h2>Des services simples, utiles et adaptés</h2>
+      <p>
+        Choisissez l’aide dont vous avez besoin, pour vous concentrer
+        sur vos clients et le développement de votre entreprise.
+      </p>
+    </div>
+
+    <div class="service-grid">
+
+      <article class="service-card">
+        <div class="service-icon">📩</div>
+        <h3>Assistance virtuelle</h3>
+        <p>
+          Un soutien à distance pour les petites tâches qui prennent
+          du temps dans votre journée.
+        </p>
+        <ul>
+          <li>Classement et organisation des e-mails</li>
+          <li>Suivi des demandes clients</li>
+          <li>Organisation de tâches administratives simples</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">💬</div>
+        <h3>Gestion des réseaux sociaux</h3>
+        <p>
+          Gardez une présence attentive et professionnelle auprès
+          de votre communauté.
+        </p>
+        <ul>
+          <li>Réponses aux messages et commentaires</li>
+          <li>Facebook et Instagram</li>
+          <li>Publication de contenus fournis par vos soins</li>
+        </ul>
+      </article>
+
+      <article class="service-card">
+        <div class="service-icon">✨</div>
+        <h3>Création de contenus</h3>
+        <p>
+          Des contenus clairs et soignés pour présenter vos offres
+          et vos produits.
+        </p>
+        <ul>
+          <li>Visuels simples avec Canva</li>
+          <li>Rédaction de publications</li>
+          <li>Descriptions de produits</li>
+        </ul>
+      </article>
+
     </div>
   </div>
 </section>
 
-<section id="services">
-  <div class="container">
-    <div class="eyebrow" data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</div>
-    <h2 class="section-title" data-fr="Des services pensés pour votre croissance" data-en="Services designed for your growth">Des services pensés pour votre croissance</h2>
-    <p class="section-intro" data-fr="Des solutions numériques pour améliorer votre communication et votre image de marque." data-en="Digital solutions to strengthen your communication and brand image.">Des solutions numériques pour améliorer votre communication et votre image de marque.</p>
-    <div class="cards">
-      <article class="card"><div class="number">01 / VISUEL</div><h3 data-fr="Création d'images" data-en="Image Creation">Création d'images</h3><p data-fr="Visuels attractifs pour vos publications, vos campagnes et votre communication commerciale." data-en="Engaging visuals for your posts, campaigns and business communication.">Visuels attractifs pour vos publications, vos campagnes et votre communication commerciale.</p></article>
-      <article class="card"><div class="number">02 / VIDÉO</div><h3 data-fr="Création vidéo" data-en="Video Creation">Création vidéo</h3><p data-fr="Contenus vidéo créatifs pour présenter vos produits, vos services et votre activité." data-en="Creative videos to showcase your products, services and business.">Contenus vidéo créatifs pour présenter vos produits, vos services et votre activité.</p></article>
-      <article class="card"><div class="number">03 / COMMUNAUTÉ</div><h3 data-fr="Gestion des commentaires" data-en="Comment Management">Gestion des commentaires</h3><p data-fr="Assistance pour répondre aux commentaires et messages de vos clients sur Facebook et Google." data-en="Support with customer comments and messages on Facebook and Google.">Assistance pour répondre aux commentaires et messages de vos clients sur Facebook et Google.</p></article>
-      <article class="card"><div class="number">04 / DIGITAL</div><h3 data-fr="Assistance numérique" data-en="Digital Support">Assistance numérique</h3><p data-fr="Un soutien flexible pour vos tâches numériques et votre communication en ligne." data-en="Flexible support for your digital tasks and online communication.">Un soutien flexible pour vos tâches numériques et votre communication en ligne.</p></article>
+<!-- A PROPOS -->
+<section id="apropos">
+  <div class="container about-grid">
+
+    <div class="about-visual">
+      <div class="about-panel">
+        <div class="big-check">🤝</div>
+        <h3>Une collaboration humaine</h3>
+        <p>
+          Des échanges simples, des consignes claires et un suivi
+          adapté à vos besoins.
+        </p>
+
+        <div class="about-stat">
+          <div>🌍 À distance<br>Depuis Madagascar</div>
+          <div>🕒 Flexible<br>Selon vos besoins</div>
+        </div>
+      </div>
     </div>
+
+    <div class="about-copy">
+      <div class="section-kicker">À propos de Parfait Alex</div>
+
+      <h2>Un appui de confiance pour les entrepreneurs occupés.</h2>
+
+      <p>
+        Parfait Alex est un service d’assistance digitale destiné aux
+        indépendants, commerçants et petites entreprises qui souhaitent
+        mieux gérer leurs communications en ligne.
+      </p>
+
+      <p>
+        Mon objectif : vous aider avec sérieux, attention et organisation,
+        tout en respectant vos consignes et le ton de votre marque.
+      </p>
+
+      <div class="value-list">
+        <div><span class="check">✓</span> Écoute et réactivité</div>
+        <div><span class="check">✓</span> Travail organisé</div>
+        <div><span class="check">✓</span> Respect des consignes</div>
+        <div><span class="check">✓</span> Échanges à distance</div>
+      </div>
+
+      <a class="btn btn-primary" href="#contact">
+        Parlons de vos besoins ↗
+      </a>
+    </div>
+
   </div>
 </section>
 
-<section class="dark-section" id="portfolio">
-  <div class="container">
-    <div class="eyebrow" data-fr="Mon univers créatif" data-en="My creative work">Mon univers créatif</div>
-    <h2 class="section-title" data-fr="Un contenu qui valorise votre marque" data-en="Content that elevates your brand">Un contenu qui valorise votre marque</h2>
-    <p class="section-intro" data-fr="Chaque projet est une occasion de communiquer clairement et de présenter votre activité avec soin." data-en="Every project is an opportunity to communicate clearly and present your business with care.">Chaque projet est une occasion de communiquer clairement et de présenter votre activité avec soin.</p>
-    <div class="cards">
-      <article class="portfolio-card"><div class="gold">✦ IMAGE & DESIGN</div><h3 data-fr="Visuels de marque" data-en="Brand Visuals">Visuels de marque</h3><p data-fr="Des créations adaptées à votre identité et à votre audience." data-en="Creative work tailored to your identity and audience.">Des créations adaptées à votre identité et à votre audience.</p></article>
-      <article class="portfolio-card"><div class="gold">✦ VIDÉO</div><h3 data-fr="Contenus dynamiques" data-en="Dynamic Content">Contenus dynamiques</h3><p data-fr="Des formats visuels conçus pour capter l'attention." data-en="Visual formats designed to capture attention.">Des formats visuels conçus pour capter l'attention.</p></article>
-      <article class="portfolio-card"><div class="gold">✦ COMMUNICATION</div><h3 data-fr="Relation client" data-en="Customer Relations">Relation client</h3><p data-fr="Une communication claire, professionnelle et attentive." data-en="Clear, professional and attentive communication.">Une communication claire, professionnelle et attentive.</p></article>
-    </div>
-  </div>
-</section>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-wrap">
 
-<section id="contact">
-  <div class="container">
-    <div class="eyebrow" data-fr="Entrons en contact" data-en="Get in touch">Entrons en contact</div>
-    <h2 class="section-title" data-fr="Parlons de votre prochain projet" data-en="Let's talk about your next project">Parlons de votre prochain projet</h2>
-    <p class="section-intro" data-fr="Vous recherchez un partenaire freelance pour votre entreprise ? Contactez-moi pour discuter de vos besoins." data-en="Looking for a freelance partner for your business? Contact me to discuss your needs.">Vous recherchez un partenaire freelance pour votre entreprise ? Contactez-moi pour discuter de vos besoins.</p>
+    <div>
+      <div class="section-kicker">Contact</div>
+      <h2>Prêt à gagner du temps ?</h2>
+
+      <p>
+        Présentez-moi votre activité et les tâches pour lesquelles
+        vous avez besoin d’aide. Nous pourrons échanger sur vos besoins
+        et définir la prochaine étape.
+      </p>
+
+      <a class="btn"
+         style="background:var(--gold);color:var(--navy)"
+         href="https://wa.me/261328160506"
+         target="_blank" rel="noopener noreferrer">
+        Me contacter sur WhatsApp ↗
+      </a>
+    </div>
+
     <div class="contact-box">
-      <p><strong>Email :</strong> <a href="mailto:parfaitalex40@gmail.com">parfaitalex40@gmail.com</a></p>
-      <p><strong>WhatsApp :</strong> <a href="https://wa.me/261328160506" target="_blank" rel="noopener">Me contacter sur WhatsApp</a></p>
-      <a class="btn btn-gold" href="https://wa.me/261328160506" target="_blank" rel="noopener" data-fr="Demander un devis →" data-en="Request a quote →">Demander un devis →</a>
+
+      <div class="contact-option">
+        <div class="mini-icon">💬</div>
+        <div>
+          <strong>WhatsApp</strong>
+          <small>+261 32 81 605 06</small>
+        </div>
+      </div>
+
+      <div class="contact-option">
+        <div class="mini-icon">✉️</div>
+        <div>
+          <strong>E-mail professionnel</strong>
+          <small>parfaitalex40@gmail.com</small>
+        </div>
+      </div>
+
+      <a class="btn btn-primary"
+         href="mailto:parfaitalex40@gmail.com?subject=Demande%20de%20renseignements%20-%20Parfait%20Alex">
+        Envoyer un e-mail ↗
+      </a>
+
     </div>
   </div>
 </section>
+
 </main>
 
-<footer>© <span id="year"></span> Alex Freelance. <span data-fr="Tous droits réservés." data-en="All rights reserved.">Tous droits réservés.</span></footer>
+<!-- PIED DE PAGE -->
+<footer class="footer">
+  <div class="container footer-inner">
+    <div>
+      <strong>Parfait Alex</strong> — Assistance digitale à distance
+    </div>
+    <div>
+      © <span id="year"></span> Parfait Alex. Tous droits réservés.
+    </div>
+  </div>
+</footer>
+
+<!-- BOUTON WHATSAPP FLOTTANT -->
+<a class="floating-wa"
+   href="https://wa.me/261328160506"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="Contacter Parfait Alex sur WhatsApp">
+  ☏ WhatsApp
+</a>
 
 <script>
 document.getElementById("year").textContent = new Date().getFullYear();
-let english = false;
-function toggleLanguage() {
-  english = !english;
-  document.documentElement.lang = english ? "en" : "fr";
-  document.querySelectorAll("[data-fr][data-en]").forEach(function(el) {
-    el.textContent = english ? el.dataset.en : el.dataset.fr;
-  });
-}
 </script>
+
 </body>
-</html>
+  </html>
+  
